@@ -1,0 +1,3 @@
+[submodule "Cyprium/vendor/spdlog"]
+	path = Cyprium/vendor/spdlog
+	url = https://github.com/gabime/spdlog
