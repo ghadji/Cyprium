@@ -15,7 +15,10 @@ namespace Cyprium
 	void Application::Run()
 	{
 		WindowResizeEvent e(1200, 720);
-		CP_TRACE(e);
+		if (e.IsInCategory(EventCategoryApplication))
+		{
+			CP_TRACE(e);
+		}
 
 		while(true);
 	}

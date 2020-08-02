@@ -5,7 +5,7 @@
       <UniqueIdentifier>{CEC1A84B-3AA1-27E7-43B9-B2BDAF178E48}</UniqueIdentifier>
     </Filter>
     <Filter Include="Cyprium\Events">
-      <UniqueIdentifier>{1a94ca0c-72c1-4dd7-aee7-df283a79808d}</UniqueIdentifier>
+      <UniqueIdentifier>{F2999428-DE67-882E-C7FB-F854B3686493}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -19,12 +19,6 @@
     <ClInclude Include="src\Cyprium\EntryPoint.h">
       <Filter>Cyprium</Filter>
     </ClInclude>
-    <ClInclude Include="src\Cyprium\Log.h">
-      <Filter>Cyprium</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Cyprium\Events\MouseEvent.h">
-      <Filter>Cyprium\Events</Filter>
-    </ClInclude>
     <ClInclude Include="src\Cyprium\Events\ApplicationEvents.h">
       <Filter>Cyprium\Events</Filter>
     </ClInclude>
@@ -33,6 +27,12 @@
     </ClInclude>
     <ClInclude Include="src\Cyprium\Events\KeyEvent.h">
       <Filter>Cyprium\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Events\MouseEvent.h">
+      <Filter>Cyprium\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Log.h">
+      <Filter>Cyprium</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
