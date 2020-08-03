@@ -149,7 +149,6 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Cyprium.h" />
     <ClInclude Include="src\Cyprium\Application.h" />
     <ClInclude Include="src\Cyprium\Core.h" />
@@ -160,12 +159,13 @@
     <ClInclude Include="src\Cyprium\Events\MouseEvent.h" />
     <ClInclude Include="src\Cyprium\Log.h" />
     <ClInclude Include="src\Cyprium\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\cppch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Cyprium\Application.cpp" />
     <ClCompile Include="src\Cyprium\Log.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\cppch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

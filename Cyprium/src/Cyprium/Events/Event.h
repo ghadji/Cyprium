@@ -1,5 +1,7 @@
 #pragma once
 
+#include "cppch.h"
+
 #include "Cyprium/Core.h"
 
 namespace Cyprium

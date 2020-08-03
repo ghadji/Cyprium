@@ -91,7 +91,8 @@ project "Sandbox"
 	includedirs 
 	{
 		"Cyprium/vendor/spdlog/include",
-		"Cyprium/src"
+		"Cyprium/src",
+		"Cyprium/vendor"
 	}
 
 	links 
