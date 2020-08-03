@@ -153,7 +153,7 @@
     <ClInclude Include="src\Cyprium\Application.h" />
     <ClInclude Include="src\Cyprium\Core.h" />
     <ClInclude Include="src\Cyprium\EntryPoint.h" />
-    <ClInclude Include="src\Cyprium\Events\ApplicationEvents.h" />
+    <ClInclude Include="src\Cyprium\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Cyprium\Events\Event.h" />
     <ClInclude Include="src\Cyprium\Events\KeyEvent.h" />
     <ClInclude Include="src\Cyprium\Events\MouseEvent.h" />

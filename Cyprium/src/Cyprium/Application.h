@@ -2,7 +2,10 @@
 
 #include "Cyprium/Core.h"
 #include "Cyprium/Events/Event.h"
+#include "Cyprium/Events/ApplicationEvent.h"
+
 #include "Cyprium/Window.h"
+
 
 namespace Cyprium
 {
@@ -13,7 +16,11 @@ namespace Cyprium
 		virtual ~Application();
 	
 		void Run();
+
+		void OnEvent(Event& e);
 	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 	};

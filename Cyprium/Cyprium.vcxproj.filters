@@ -25,9 +25,6 @@
     <ClInclude Include="src\Cyprium\EntryPoint.h">
       <Filter>Cyprium</Filter>
     </ClInclude>
-    <ClInclude Include="src\Cyprium\Events\ApplicationEvents.h">
-      <Filter>Cyprium\Events</Filter>
-    </ClInclude>
     <ClInclude Include="src\Cyprium\Events\Event.h">
       <Filter>Cyprium\Events</Filter>
     </ClInclude>
@@ -47,6 +44,9 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\cppch.h" />
+    <ClInclude Include="src\Cyprium\Events\ApplicationEvent.h">
+      <Filter>Cyprium\Events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Cyprium\Application.cpp">
