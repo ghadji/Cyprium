@@ -2,9 +2,6 @@
 
 #include "Cyprium/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace Cyprium
 {
 	// When an event occurs it is immmediately dispatched and must be dealt with right away
@@ -37,14 +34,14 @@ namespace Cyprium
 
 	class CYPRIUM_API Event
 	{
-		friend class EventDIspatcher;
+		friend class EventDispatcher;
 	public:
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0; // Mainly will be used for debugging
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
-		inline bool IsInCategory(EventCategory category)
+		bool IsInCategory(EventCategory category)
 		{
 			return GetCategoryFlags() & category;
 		}

@@ -1,3 +1,4 @@
+#include "cppch.h"
 #include "Application.h"
 
 #include "Cyprium/Events/ApplicationEvents.h"

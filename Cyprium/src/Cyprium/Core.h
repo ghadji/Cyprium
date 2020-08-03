@@ -5,9 +5,9 @@
 		#define CYPRIUM_API __declspec(dllexport)
 	#else
 		#define CYPRIUM_API __declspec(dllimport)
-	#endif
+	#endif // CP_BUILD_DLL
 #else
 	#error Cyprium only supports Windows!
-#endif
+#endif // CP_PLATFORM_WINDOWS
 
 #define BIT(x) (1 << x)

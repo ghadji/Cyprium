@@ -18,6 +18,9 @@ project "Cyprium"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "cppch.h"
+	pchsource "Cyprium/src/cppch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

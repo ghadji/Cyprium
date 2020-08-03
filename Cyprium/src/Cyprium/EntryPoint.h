@@ -1,5 +1,4 @@
 #pragma once
-#include <stdio.h>
 
 #ifdef CP_PLATFORM_WINDOWS
 

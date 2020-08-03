@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Cyprium
 {
 	class CYPRIUM_API MouseMovedEvent : public Event

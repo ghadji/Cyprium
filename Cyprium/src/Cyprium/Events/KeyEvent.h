@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Cyprium
 {
 	// Base class for key pressed/key released events that holds the keycode of the key
