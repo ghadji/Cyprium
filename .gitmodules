@@ -1,3 +1,6 @@
 [submodule "Cyprium/vendor/spdlog"]
 	path = Cyprium/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Cyprium/vendor/GLFW"]
+	path = Cyprium/vendor/GLFW
+	url = https://github.com/ghadji/glfw/

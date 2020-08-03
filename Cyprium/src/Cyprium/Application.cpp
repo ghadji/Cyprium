@@ -1,26 +1,28 @@
 #include "cppch.h"
-#include "Application.h"
+#include "Cyprium/Application.h"
 
 #include "Cyprium/Events/ApplicationEvents.h"
-#include "Cyprium/Log.h"
+
+#include <GLFW/glfw3.h>
 
 namespace Cyprium
 {
 
 	Application::Application()
-	{}
+	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
+	}
 
 	Application::~Application()
 	{}
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1200, 720);
-		if (e.IsInCategory(EventCategoryApplication))
+		while (m_Running)
 		{
-			CP_TRACE(e);
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Window->OnUpdate();
 		}
-
-		while(true);
 	}
 }

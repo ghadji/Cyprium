@@ -34,7 +34,11 @@
     <ClInclude Include="src\Cyprium\Log.h">
       <Filter>Cyprium</Filter>
     </ClInclude>
+    <ClInclude Include="src\Cyprium\Window.h">
+      <Filter>Cyprium</Filter>
+    </ClInclude>
     <ClInclude Include="src\cppch.h" />
+    <ClInclude Include="Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Cyprium\Application.cpp">
@@ -44,5 +48,6 @@
       <Filter>Cyprium</Filter>
     </ClCompile>
     <ClCompile Include="src\cppch.cpp" />
+    <ClCompile Include="Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

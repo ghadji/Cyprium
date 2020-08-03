@@ -10,6 +10,12 @@ workspace "Cyprium"
 	
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include folders that are relative to the root folder 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Cyprium/vendor/GLFW/include"
+
+include "Cyprium/vendor/GLFW"
+
 project "Cyprium"
 	location "Cyprium"
 	kind "SharedLib"
@@ -30,7 +36,14 @@ project "Cyprium"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
