@@ -3,6 +3,7 @@
 // For use by Cyprium applications
 
 #include "Cyprium/Application.h"
+#include "Cyprium/Layer.h"
 #include "Cyprium/Log.h"
 
 /* Entry Point */

@@ -25,6 +25,9 @@
     <ClInclude Include="src\Cyprium\EntryPoint.h">
       <Filter>Cyprium</Filter>
     </ClInclude>
+    <ClInclude Include="src\Cyprium\Events\ApplicationEvent.h">
+      <Filter>Cyprium\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Cyprium\Events\Event.h">
       <Filter>Cyprium\Events</Filter>
     </ClInclude>
@@ -33,6 +36,12 @@
     </ClInclude>
     <ClInclude Include="src\Cyprium\Events\MouseEvent.h">
       <Filter>Cyprium\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Layer.h">
+      <Filter>Cyprium</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\LayerStack.h">
+      <Filter>Cyprium</Filter>
     </ClInclude>
     <ClInclude Include="src\Cyprium\Log.h">
       <Filter>Cyprium</Filter>
@@ -44,12 +53,15 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\cppch.h" />
-    <ClInclude Include="src\Cyprium\Events\ApplicationEvent.h">
-      <Filter>Cyprium\Events</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Cyprium\Application.cpp">
+      <Filter>Cyprium</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cyprium\Layer.cpp">
+      <Filter>Cyprium</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cyprium\LayerStack.cpp">
       <Filter>Cyprium</Filter>
     </ClCompile>
     <ClCompile Include="src\Cyprium\Log.cpp">
