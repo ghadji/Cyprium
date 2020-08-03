@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include folders that are relative to the root folder 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Cyprium/vendor/GLFW/include"
+IncludeDir["Glad"] = "Cyprium/vendor/Glad/include"
 
 include "Cyprium/vendor/GLFW"
+include "Cyprium/vendor/Glad"
 
 project "Cyprium"
 	location "Cyprium"
@@ -37,12 +39,14 @@ project "Cyprium"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -54,7 +58,8 @@ project "Cyprium"
 		defines
 		{
 			"CP_PLATFORM_WINDOWS",
-			"CP_BUILD_DLL"
+			"CP_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
