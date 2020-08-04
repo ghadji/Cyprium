@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Cyprium/vendor/GLFW/include"
 IncludeDir["Glad"] = "Cyprium/vendor/Glad/include"
 IncludeDir["ImGui"] = "Cyprium/vendor/imgui"
+IncludeDir["glm"] = "Cyprium/vendor/glm"
 
 group "Dependencies"
 	include "Cyprium/vendor/GLFW"
@@ -38,7 +39,9 @@ project "Cyprium"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -47,7 +50,8 @@ project "Cyprium"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -108,7 +112,7 @@ project "Sandbox"
 	{
 		"Cyprium/vendor/spdlog/include",
 		"Cyprium/src",
-		"Cyprium/vendor"
+		"%{IncludeDir.glm}"
 	}
 
 	links 
