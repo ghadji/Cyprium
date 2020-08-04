@@ -1,5 +1,6 @@
 workspace "Cyprium"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
