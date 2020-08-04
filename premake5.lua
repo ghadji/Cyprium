@@ -17,9 +17,11 @@ IncludeDir["GLFW"] = "Cyprium/vendor/GLFW/include"
 IncludeDir["Glad"] = "Cyprium/vendor/Glad/include"
 IncludeDir["ImGui"] = "Cyprium/vendor/imgui"
 
-include "Cyprium/vendor/GLFW"
-include "Cyprium/vendor/Glad"
-include "Cyprium/vendor/imgui"
+group "Dependencies"
+	include "Cyprium/vendor/GLFW"
+	include "Cyprium/vendor/Glad"
+	include "Cyprium/vendor/imgui"
+group ""
 
 project "Cyprium"
 	location "Cyprium"
@@ -69,7 +71,7 @@ project "Cyprium"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
