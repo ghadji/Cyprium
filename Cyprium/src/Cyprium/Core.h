@@ -10,6 +10,10 @@
 	#error Cyprium only supports Windows!
 #endif // CP_PLATFORM_WINDOWS
 
+#ifdef CP_DEBUG
+	#define CP_ENABLE_ASSERTS
+#endif
+
 #ifdef CP_ENABLE_ASSERTS
 	#define CP_ASSERT(x, ...) { if (!(x)) { CP_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define CP_CORE_ASSERT(x, ...) { if (!(x)) { CP_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
