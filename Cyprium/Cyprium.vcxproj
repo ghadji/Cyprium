@@ -158,11 +158,13 @@
     <ClInclude Include="src\Cyprium\Events\KeyEvent.h" />
     <ClInclude Include="src\Cyprium\Events\MouseEvent.h" />
     <ClInclude Include="src\Cyprium\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Cyprium\Input.h" />
     <ClInclude Include="src\Cyprium\Layer.h" />
     <ClInclude Include="src\Cyprium\LayerStack.h" />
     <ClInclude Include="src\Cyprium\Log.h" />
     <ClInclude Include="src\Cyprium\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\cppch.h" />
   </ItemGroup>
@@ -173,6 +175,7 @@
     <ClCompile Include="src\Cyprium\LayerStack.cpp" />
     <ClCompile Include="src\Cyprium\Log.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\cppch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
