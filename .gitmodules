@@ -4,3 +4,6 @@
 [submodule "Cyprium/vendor/GLFW"]
 	path = Cyprium/vendor/GLFW
 	url = https://github.com/ghadji/glfw/
+[submodule "Cyprium/vendor/imgui"]
+	path = Cyprium/vendor/imgui
+	url = https://github.com/ghadji/imgui/
