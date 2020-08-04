@@ -7,6 +7,8 @@
 #include "Cyprium/Window.h"
 #include "Cyprium/LayerStack.h"
 
+#include "Cyprium/ImGui/ImGuiLayer.h"
+
 namespace Cyprium
 {
 	class CYPRIUM_API Application
@@ -28,6 +30,7 @@ namespace Cyprium
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:

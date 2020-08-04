@@ -112,6 +112,7 @@ project "Sandbox"
 	{
 		"Cyprium/vendor/spdlog/include",
 		"Cyprium/src",
+		"Cyprium/vendor",
 		"%{IncludeDir.glm}"
 	}
 
