@@ -9,15 +9,15 @@ public:
 
 	void OnUpdate() override
 	{
-		CP_INFO("ExampleLayer::Update");
+		// CP_INFO("ExampleLayer::Update");
 
-		if (Cyprium::Input::IsKeyPressed(CP_KEY_TAB))
-			CP_INFO("You've pressed the TAB Key!");
+		if (Cyprium::Input::IsMouseButtonPressed(CP_KEY_TAB))
+			CP_TRACE("You've pressed the TAB Key!");
 	}
 	
 	void OnEvent(Cyprium::Event& event) override
 	{
-		CP_TRACE("{0}", event);
+		// CP_TRACE("{0}", event);
 	}
 };
 
