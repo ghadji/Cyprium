@@ -19,12 +19,12 @@ public:
 			CP_TRACE("You've pressed the TAB Key!");
 	}
 	
-	//virtual void OnImGuiRenderer() override
-	//{
-	//	ImGui::Begin("Test");
-	//	ImGui::Text("Hello World!");
-	//	ImGui::End();
-	//}
+	virtual void OnImGuiRender() override
+	{
+		//ImGui::Begin("Test");
+		//ImGui::Text("Hello World!");
+		//ImGui::End();
+	}
 
 	void OnEvent(Cyprium::Event& event) override
 	{
