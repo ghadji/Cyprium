@@ -1,3 +1,8 @@
+/*
+	Based on the tutorial videos by The Cherno
+	Link: https://www.youtube.com/watch?v=YZKEjaCnsjU&list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT
+*/
+
 #pragma once
 
 #ifdef CP_PLATFORM_WINDOWS

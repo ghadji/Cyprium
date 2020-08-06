@@ -155,7 +155,9 @@
     <ClInclude Include="src\Cyprium\LayerStack.h" />
     <ClInclude Include="src\Cyprium\Log.h" />
     <ClInclude Include="src\Cyprium\MouseButtonCodes.h" />
+    <ClInclude Include="src\Cyprium\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Cyprium\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\cppch.h" />
@@ -575,6 +577,7 @@
     <ClCompile Include="src\Cyprium\Layer.cpp" />
     <ClCompile Include="src\Cyprium\LayerStack.cpp" />
     <ClCompile Include="src\Cyprium\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\cppch.cpp">
