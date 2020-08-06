@@ -18,6 +18,11 @@ namespace Cyprium
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		CP_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+		CP_CORE_INFO("OpenGL Renderer");
+		CP_CORE_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
+		CP_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
+		CP_CORE_INFO("  Version: {0}", glGetString(GL_VERSION));
 	}
 	
 	void OpenGLContext::SwapBuffers()
