@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Cyprium\Renderer\Renderer.h" />
     <ClInclude Include="src\Cyprium.h" />
     <ClInclude Include="src\Cyprium\Application.h" />
     <ClInclude Include="src\Cyprium\Core.h" />
@@ -155,8 +156,11 @@
     <ClInclude Include="src\Cyprium\LayerStack.h" />
     <ClInclude Include="src\Cyprium\Log.h" />
     <ClInclude Include="src\Cyprium\MouseButtonCodes.h" />
+    <ClInclude Include="src\Cyprium\Renderer\Buffer.h" />
     <ClInclude Include="src\Cyprium\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Cyprium\Renderer\Shader.h" />
     <ClInclude Include="src\Cyprium\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
@@ -577,6 +581,10 @@
     <ClCompile Include="src\Cyprium\Layer.cpp" />
     <ClCompile Include="src\Cyprium\LayerStack.cpp" />
     <ClCompile Include="src\Cyprium\Log.cpp" />
+    <ClCompile Include="src\Cyprium\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Cyprium\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Cyprium\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
