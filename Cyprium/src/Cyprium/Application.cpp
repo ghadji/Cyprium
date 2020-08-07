@@ -1,9 +1,9 @@
 #include "cppch.h"
 #include "Cyprium/Application.h"
 
-#include <glad/glad.h>
-
 #include "Input.h"
+
+#include "Cyprium/Renderer/Renderer.h"
 
 namespace Cyprium
 {
@@ -11,27 +11,6 @@ namespace Cyprium
 	#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 	Application* Application::s_Instance = nullptr;
-
-	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
-	{
-		switch (type)
-		{
-			case Cyprium::ShaderDataType::Float:	return GL_FLOAT;
-			case Cyprium::ShaderDataType::Float2:	return GL_FLOAT;
-			case Cyprium::ShaderDataType::Float3:	return GL_FLOAT;
-			case Cyprium::ShaderDataType::Float4:	return GL_FLOAT;
-			case Cyprium::ShaderDataType::Mat3:		return GL_FLOAT;
-			case Cyprium::ShaderDataType::Mat4:		return GL_FLOAT;
-			case Cyprium::ShaderDataType::Int:		return GL_INT;
-			case Cyprium::ShaderDataType::Int2:		return GL_INT;
-			case Cyprium::ShaderDataType::Int3:		return GL_INT;
-			case Cyprium::ShaderDataType::Int4:		return GL_INT;
-			case Cyprium::ShaderDataType::Bool:		return GL_BOOL;
-		}
-
-		CP_CORE_ASSERT(false, "Unknown ShaderDataType specified!");
-		return 0;
-	}
 
 	Application::Application()
 	{
@@ -188,16 +167,18 @@ namespace Cyprium
 	{
 		while (m_Running)
 		{
-			glClearColor(0.1f, 0.1f, 0.1f, 1);
-			glClear(GL_COLOR_BUFFER_BIT);
+			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+			RenderCommand::Clear();
+
+			Renderer::BeginScene();
 
 			m_BlueShader->Bind();
-			m_SquareVA->Bind();
-			glDrawElements(GL_TRIANGLES, m_SquareVA->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::Submit(m_SquareVA);
 
 			m_Shader->Bind();
-			m_VertexArray->Bind();
-			glDrawElements(GL_TRIANGLES, m_VertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::Submit(m_VertexArray);
+
+			Renderer::EndScene();
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
