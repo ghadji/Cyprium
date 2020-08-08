@@ -13,6 +13,19 @@
 
 #include "Cyprium/ImGui/ImGuiLayer.h"
 
+/* Renderer */
+
+#include "Cyprium/Renderer/Renderer.h"
+#include "Cyprium/Renderer/RenderCommand.h"
+
+#include "Cyprium/Renderer/Buffer.h"
+#include "Cyprium/Renderer/Shader.h"
+#include "Cyprium/Renderer/Camera.h"
+
+#include "Cyprium/Renderer/VertexArray.h"
+
+/***************/
+
 /* Entry Point */
 
 #include "Cyprium/EntryPoint.h"
