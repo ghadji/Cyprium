@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Cyprium\Renderer\Camera.h" />
     <ClInclude Include="src\Cyprium\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Cyprium\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -580,6 +581,7 @@
     <ClInclude Include="src\Cyprium\Renderer\VertexArray.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Cyprium\Renderer\Camera.cpp" />
     <ClCompile Include="src\Cyprium\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Cyprium\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />

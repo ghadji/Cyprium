@@ -13,6 +13,8 @@
 #include "Cyprium/Renderer/Buffer.h"
 #include <Cyprium/Renderer/VertexArray.h>
 
+#include "Cyprium/Renderer/Camera.h"
+
 namespace Cyprium
 {
 	class CYPRIUM_API Application
@@ -43,6 +45,8 @@ namespace Cyprium
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};

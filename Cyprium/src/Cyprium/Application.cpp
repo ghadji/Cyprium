@@ -4,6 +4,8 @@
 #include "Input.h"
 
 #include "Cyprium/Renderer/Renderer.h"
+#include <Cyprium\KeyCodes.h>
+
 
 namespace Cyprium
 {
@@ -13,6 +15,7 @@ namespace Cyprium
 	Application* Application::s_Instance = nullptr;
 
 	Application::Application()
+		:m_Camera(-1.6f, 1.6f, -0.9f, 0.9f)
 	{
 		CP_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
@@ -73,6 +76,8 @@ namespace Cyprium
 			layout(location = 0) in vec3 a_Position;
 			layout(location = 1) in vec4 a_Color;
 
+			uniform mat4 u_ViewProjection;
+
 			out vec3 v_Position;
 			out vec4 v_Color;
 
@@ -80,7 +85,7 @@ namespace Cyprium
 			{
 				v_Position = a_Position;
 				v_Color = a_Color;
-				gl_Position = vec4(a_Position, 1.0);	
+				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);	
 			}
 		)";
 
@@ -106,12 +111,14 @@ namespace Cyprium
 			
 			layout(location = 0) in vec3 a_Position;
 
+			uniform mat4 u_ViewProjection;
+
 			out vec3 v_Position;
 
 			void main()
 			{
 				v_Position = a_Position;
-				gl_Position = vec4(a_Position, 1.0);	
+				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);	
 			}
 		)";
 
@@ -165,18 +172,33 @@ namespace Cyprium
 
 	void Application::Run()
 	{
+		float xPos = 0.0f, yPos = 0.0f, rot = 0.0f;
+		
 		while (m_Running)
 		{
 			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 			RenderCommand::Clear();
 
-			Renderer::BeginScene();
+			if (Cyprium::Input::IsKeyPressed(CP_KEY_A))
+				xPos -= 0.05f;
+			else if (Cyprium::Input::IsKeyPressed(CP_KEY_D))
+				xPos += 0.05f;
+			else if (Cyprium::Input::IsKeyPressed(CP_KEY_W))
+				yPos += 0.05f;
+			else if (Cyprium::Input::IsKeyPressed(CP_KEY_S))
+				yPos -= 0.05f;
+			else if (Cyprium::Input::IsKeyPressed(CP_KEY_E))
+				rot += 1.0f;
+			else if (Cyprium::Input::IsKeyPressed(CP_KEY_Q))
+				rot -= 1.0f;
 
-			m_BlueShader->Bind();
-			Renderer::Submit(m_SquareVA);
+			m_Camera.SetPosition({ xPos, yPos, 0.0f });
+			m_Camera.SetRotation(rot);
 
-			m_Shader->Bind();
-			Renderer::Submit(m_VertexArray);
+			Renderer::BeginScene(m_Camera);
+
+			Renderer::Submit(m_SquareVA, m_BlueShader);
+			Renderer::Submit(m_VertexArray, m_Shader);
 
 			Renderer::EndScene();
 
