@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Cyprium/Core.h"
+#include "Cyprium/Core/Timestep.h"
 #include "Cyprium/Events/Event.h"
 
 namespace Cyprium
@@ -13,7 +14,7 @@ namespace Cyprium
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

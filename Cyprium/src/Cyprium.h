@@ -4,6 +4,8 @@
 
 #include "Cyprium/Application.h"
 
+#include "Cyprium/Core/Timestep.h"
+
 #include "Cyprium/Input.h"
 #include "Cyprium/KeyCodes.h"
 #include "Cyprium/MouseButtonCodes.h"

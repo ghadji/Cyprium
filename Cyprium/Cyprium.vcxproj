@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Cyprium\Core\Timestep.h" />
     <ClInclude Include="src\Cyprium\Renderer\Camera.h" />
     <ClInclude Include="src\Cyprium\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Cyprium\Renderer\RendererAPI.h" />

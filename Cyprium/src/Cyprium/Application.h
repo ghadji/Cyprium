@@ -7,13 +7,9 @@
 #include "Cyprium/Window.h"
 #include "Cyprium/LayerStack.h"
 
+#include "Cyprium/Core/Timestep.h"
+
 #include "Cyprium/ImGui/ImGuiLayer.h"
-
-#include "Cyprium/Renderer/Shader.h"
-#include "Cyprium/Renderer/Buffer.h"
-#include <Cyprium/Renderer/VertexArray.h>
-
-#include "Cyprium/Renderer/Camera.h"
 
 namespace Cyprium
 {
@@ -34,11 +30,12 @@ namespace Cyprium
 		inline Window& GetWindow() { return *m_Window; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
-
+	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};
