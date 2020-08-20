@@ -19,7 +19,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		std::shared_ptr<Cyprium::VertexBuffer> vertexBuffer;
+		Cyprium::Ref<Cyprium::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Cyprium::VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		Cyprium::BufferLayout layout = {
@@ -30,7 +30,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Cyprium::IndexBuffer> indexBuffer;
+		Cyprium::Ref<Cyprium::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Cyprium::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -43,7 +43,7 @@ public:
 			 -0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<Cyprium::VertexBuffer> squareVB;
+		Cyprium::Ref<Cyprium::VertexBuffer> squareVB;
 		squareVB.reset(Cyprium::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
 			{ Cyprium::ShaderDataType::Float3, "a_Position" }
@@ -51,7 +51,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Cyprium::IndexBuffer> squareIB;
+		Cyprium::Ref<Cyprium::IndexBuffer> squareIB;
 		squareIB.reset(Cyprium::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -188,11 +188,11 @@ public:
 
 	}
 private:
-	std::shared_ptr<Cyprium::Shader> m_Shader;
-	std::shared_ptr<Cyprium::VertexArray> m_VertexArray;
+	Cyprium::Ref<Cyprium::Shader> m_Shader;
+	Cyprium::Ref<Cyprium::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Cyprium::Shader> m_FlatColorShader;
-	std::shared_ptr<Cyprium::VertexArray> m_SquareVA;
+	Cyprium::Ref<Cyprium::Shader> m_FlatColorShader;
+	Cyprium::Ref<Cyprium::VertexArray> m_SquareVA;
 
 	Cyprium::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
