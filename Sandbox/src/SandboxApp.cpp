@@ -36,17 +36,18 @@ public:
 
 		m_SquareVA.reset(Cyprium::VertexArray::Create());
 
-		float squareVertices[3 * 4] = {
-			 -0.5f, -0.5f, 0.0f,
-			  0.5f, -0.5f, 0.0f,
-			  0.5f,  0.5f, 0.0f,
-			 -0.5f,  0.5f, 0.0f
+		float squareVertices[5 * 4] = {
+			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
+			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
 		Cyprium::Ref<Cyprium::VertexBuffer> squareVB;
 		squareVB.reset(Cyprium::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
-			{ Cyprium::ShaderDataType::Float3, "a_Position" }
+			{ Cyprium::ShaderDataType::Float3, "a_Position" },
+			{ Cyprium::ShaderDataType::Float2, "a_TexCoord" }
 			});
 		m_SquareVA->AddVertexBuffer(squareVB);
 
@@ -125,6 +126,43 @@ public:
 		)";
 
 		m_FlatColorShader.reset(Cyprium::Shader::Create(flatColorVertexSrc, flatColorFragmentSrc));
+
+		std::string textureShaderVertexSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec2 a_TexCoord;
+			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
+			out vec2 v_TexCoord;
+			void main()
+			{
+				v_TexCoord = a_TexCoord;
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);	
+			}
+		)";
+
+		std::string textureShaderFragmentSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) out vec4 color;
+
+			in vec2 v_TexCoord;
+			
+			uniform sampler2D u_Texture;
+			void main()
+			{
+				color = texture(u_Texture, v_TexCoord);
+			}
+		)";
+
+		m_TextureShader.reset(Cyprium::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+		
+		m_Texture = Cyprium::Texture2D::Create("assets/textures/Checkerboard.png");
+
+		std::dynamic_pointer_cast<Cyprium::OpenGLShader>(m_TextureShader)->Bind();
+		std::dynamic_pointer_cast<Cyprium::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+
 	}
 
 	void OnUpdate(Cyprium::Timestep ts) override
@@ -167,11 +205,14 @@ public:
 			{
 				glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
 				glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
-				Cyprium::Renderer::Submit(m_SquareVA, m_FlatColorShader, transform);
+				Cyprium::Renderer::Submit(m_FlatColorShader, m_SquareVA, transform);
 			}
 		}
+		m_Texture->Bind();
+		Cyprium::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
-		Cyprium::Renderer::Submit(m_VertexArray, m_Shader); 
+		// Triangle rendering
+		//Cyprium::Renderer::Submit(m_VertexArray, m_Shader); 
 
 		Cyprium::Renderer::EndScene();
 	}
@@ -191,8 +232,10 @@ private:
 	Cyprium::Ref<Cyprium::Shader> m_Shader;
 	Cyprium::Ref<Cyprium::VertexArray> m_VertexArray;
 
-	Cyprium::Ref<Cyprium::Shader> m_FlatColorShader;
+	Cyprium::Ref<Cyprium::Shader> m_FlatColorShader, m_TextureShader;
 	Cyprium::Ref<Cyprium::VertexArray> m_SquareVA;
+
+	Cyprium::Ref<Cyprium::Texture2D> m_Texture;
 
 	Cyprium::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;

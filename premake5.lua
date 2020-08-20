@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "Cyprium/vendor/GLFW/include"
 IncludeDir["Glad"] = "Cyprium/vendor/Glad/include"
 IncludeDir["ImGui"] = "Cyprium/vendor/imgui"
 IncludeDir["glm"] = "Cyprium/vendor/glm"
+IncludeDir["stb_image"] = "Cyprium/vendor/stb_image"
 
 group "Dependencies"
 	include "Cyprium/vendor/GLFW"
@@ -41,6 +42,8 @@ project "Cyprium"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
@@ -57,7 +60,8 @@ project "Cyprium"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links

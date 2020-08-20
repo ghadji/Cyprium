@@ -7,14 +7,23 @@
     <Filter Include="src\Cyprium">
       <UniqueIdentifier>{E5C1E254-5177-5B4A-DA6B-55214620524E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Cyprium\Core">
+      <UniqueIdentifier>{5DDD69FF-49D6-8851-7208-6ED65E60685D}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Cyprium\Events">
       <UniqueIdentifier>{29BA7886-159E-39DC-7EFE-332F6A01245E}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Cyprium\ImGui">
       <UniqueIdentifier>{CF4E10ED-3B65-0E83-84DC-99A4F031DF0A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Cyprium\Renderer">
+      <UniqueIdentifier>{2BF78AFE-1786-14C8-C0A4-28C3AC12256E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\OpenGL">
+      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Platform\Windows">
       <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
@@ -40,6 +49,9 @@
     <Filter Include="vendor\glm\glm\gtx">
       <UniqueIdentifier>{B3A6A76B-9F8A-68C1-08EB-6214F4ED5243}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Cyprium.h">
@@ -50,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="src\Cyprium\Core.h">
       <Filter>src\Cyprium</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Core\Timestep.h">
+      <Filter>src\Cyprium\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Cyprium\EntryPoint.h">
       <Filter>src\Cyprium</Filter>
@@ -87,8 +102,53 @@
     <ClInclude Include="src\Cyprium\MouseButtonCodes.h">
       <Filter>src\Cyprium</Filter>
     </ClInclude>
+    <ClInclude Include="src\Cyprium\Renderer\Buffer.h">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Renderer\Camera.h">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Renderer\GraphicsContext.h">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Renderer\RenderCommand.h">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Renderer\Renderer.h">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Renderer\RendererAPI.h">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Renderer\Shader.h">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Renderer\Texture.h">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\Renderer\VertexArray.h">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Cyprium\Window.h">
       <Filter>src\Cyprium</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Platform\Windows</Filter>
@@ -1323,20 +1383,9 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\Cyprium\Renderer\GraphicsContext.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="src\Cyprium\Renderer\Shader.h" />
-    <ClInclude Include="src\Cyprium\Renderer\Buffer.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="src\Cyprium\Renderer\Renderer.h" />
-    <ClInclude Include="src\Cyprium\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\Cyprium\Renderer\RendererAPI.h" />
-    <ClInclude Include="src\Cyprium\Renderer\RenderCommand.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
-    <ClInclude Include="src\Cyprium\Renderer\Camera.h" />
-    <ClInclude Include="src\Cyprium\Core\Timestep.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Cyprium\Application.cpp">
@@ -1357,6 +1406,48 @@
     <ClCompile Include="src\Cyprium\Log.cpp">
       <Filter>src\Cyprium</Filter>
     </ClCompile>
+    <ClCompile Include="src\Cyprium\Renderer\Buffer.cpp">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cyprium\Renderer\Camera.cpp">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cyprium\Renderer\RenderCommand.cpp">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cyprium\Renderer\Renderer.cpp">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cyprium\Renderer\RendererAPI.cpp">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cyprium\Renderer\Shader.cpp">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cyprium\Renderer\Texture.cpp">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cyprium\Renderer\VertexArray.cpp">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1366,17 +1457,8 @@
     <ClCompile Include="src\cppch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="src\Cyprium\Renderer\Shader.cpp" />
-    <ClCompile Include="src\Cyprium\Renderer\Buffer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="src\Cyprium\Renderer\Renderer.cpp" />
-    <ClCompile Include="src\Cyprium\Renderer\VertexArray.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
-    <ClCompile Include="src\Cyprium\Renderer\RendererAPI.cpp" />
-    <ClCompile Include="src\Cyprium\Renderer\RenderCommand.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
-    <ClCompile Include="src\Cyprium\Renderer\Camera.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
