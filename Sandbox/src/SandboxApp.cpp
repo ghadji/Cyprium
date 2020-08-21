@@ -56,17 +56,17 @@ public:
 		squareIB.reset(Cyprium::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
-		m_Shader.reset(Cyprium::Shader::Create("assets/shaders/SimpleShader.glsl"));
+		m_Shader = Cyprium::Shader::Create("assets/shaders/SimpleShader.glsl");
 
-		m_FlatColorShader.reset(Cyprium::Shader::Create("assets/shaders/FlatColorTexture.glsl"));
+		m_FlatColorShader = Cyprium::Shader::Create("assets/shaders/FlatColorTexture.glsl");
 
-		m_TextureShader.reset(Cyprium::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 		
 		m_Texture = Cyprium::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_HlmiLogoTexture = Cyprium::Texture2D::Create("assets/textures/Halloumination.png");
 
-		std::dynamic_pointer_cast<Cyprium::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<Cyprium::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<Cyprium::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<Cyprium::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 
 	}
 
@@ -113,10 +113,13 @@ public:
 				Cyprium::Renderer::Submit(m_FlatColorShader, m_SquareVA, transform);
 			}
 		}
+
+		auto textureShader = m_ShaderLibrary.Get("Texture");
+
 		m_Texture->Bind();
-		Cyprium::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Cyprium::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 		m_HlmiLogoTexture->Bind();
-		Cyprium::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Cyprium::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle rendering
 		//Cyprium::Renderer::Submit(m_VertexArray, m_Shader); 
@@ -136,10 +139,11 @@ public:
 
 	}
 private:
+	Cyprium::ShaderLibrary m_ShaderLibrary;
 	Cyprium::Ref<Cyprium::Shader> m_Shader;
 	Cyprium::Ref<Cyprium::VertexArray> m_VertexArray;
 
-	Cyprium::Ref<Cyprium::Shader> m_FlatColorShader, m_TextureShader;
+	Cyprium::Ref<Cyprium::Shader> m_FlatColorShader;
 	Cyprium::Ref<Cyprium::VertexArray> m_SquareVA;
 
 	Cyprium::Ref<Cyprium::Texture2D> m_Texture, m_HlmiLogoTexture;
