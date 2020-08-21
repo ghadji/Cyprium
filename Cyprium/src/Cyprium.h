@@ -14,6 +14,7 @@
 #include "Cyprium/Log.h"
 
 #include "Cyprium/ImGui/ImGuiLayer.h"
+#include "Cyprium/OrthographicCameraController.h"
 
 /* Renderer */
 
@@ -23,7 +24,7 @@
 #include "Cyprium/Renderer/Buffer.h"
 #include "Cyprium/Renderer/Shader.h"
 #include "Cyprium/Renderer/Texture.h"
-#include "Cyprium/Renderer/Camera.h"
+#include "Cyprium/Renderer/OrthographicCamera.h"
 
 #include "Cyprium/Renderer/VertexArray.h"
 

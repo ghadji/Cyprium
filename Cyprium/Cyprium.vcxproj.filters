@@ -105,9 +105,6 @@
     <ClInclude Include="src\Cyprium\Renderer\Buffer.h">
       <Filter>src\Cyprium\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Cyprium\Renderer\Camera.h">
-      <Filter>src\Cyprium\Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="src\Cyprium\Renderer\GraphicsContext.h">
       <Filter>src\Cyprium\Renderer</Filter>
     </ClInclude>
@@ -1386,6 +1383,10 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="src\Cyprium\Renderer\OrthographicCamera.h">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cyprium\OrthographicCameraController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Cyprium\Application.cpp">
@@ -1407,9 +1408,6 @@
       <Filter>src\Cyprium</Filter>
     </ClCompile>
     <ClCompile Include="src\Cyprium\Renderer\Buffer.cpp">
-      <Filter>src\Cyprium\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Cyprium\Renderer\Camera.cpp">
       <Filter>src\Cyprium\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Cyprium\Renderer\RenderCommand.cpp">
@@ -1460,5 +1458,9 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
+    <ClCompile Include="src\Cyprium\Renderer\OrthographicCamera.cpp">
+      <Filter>src\Cyprium\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cyprium\OrthographicCameraController.cpp" />
   </ItemGroup>
 </Project>
