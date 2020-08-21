@@ -3,11 +3,15 @@
 #include "Cyprium/Renderer/Shader.h"
 #include <glm/glm.hpp>
 
+// TODO: remove since it's temporary
+typedef unsigned int GLenum;
+
 namespace Cyprium
 {
 	class OpenGLShader : public Shader
 	{
 	public:
+		OpenGLShader(const std::string& filepath);
 		OpenGLShader(const std::string& vertexSrc, const std::string& fragmentSrc);
 		virtual ~OpenGLShader();
 
@@ -23,6 +27,10 @@ namespace Cyprium
 
 		void UploadUniformMat3(const std::string& name, const glm::mat3& matrix);
 		void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
+	private:
+		std::string ReadFile(const std::string& filepath);
+		std::unordered_map<GLenum, std::string> Preprocess(const std::string& source);
+		void Compile(std::unordered_map<GLenum, std::string>& shaderSources);
 	private:
 		uint32_t m_RendererID;
 	};
