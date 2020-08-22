@@ -61,7 +61,7 @@ public:
 		m_FlatColorShader = Cyprium::Shader::Create("assets/shaders/FlatColorTexture.glsl");
 
 		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
-		
+
 		m_Texture = Cyprium::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_HlmiLogoTexture = Cyprium::Texture2D::Create("assets/textures/Halloumination.png");
 
@@ -82,7 +82,7 @@ public:
 		Cyprium::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		static glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
-		
+
 		std::dynamic_pointer_cast<Cyprium::OpenGLShader>(m_FlatColorShader)->Bind();
 		std::dynamic_pointer_cast<Cyprium::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
 
@@ -108,7 +108,7 @@ public:
 
 		Cyprium::Renderer::EndScene();
 	}
-	
+
 	virtual void OnImGuiRender() override
 	{
 		ImGui::Begin("Settings");
