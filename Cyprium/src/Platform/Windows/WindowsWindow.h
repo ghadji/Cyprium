@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Cyprium/Window.h"
+#include "Cyprium/Core/Window.h"
 #include "Cyprium/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

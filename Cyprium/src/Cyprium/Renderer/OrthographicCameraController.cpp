@@ -1,8 +1,8 @@
 #include "cppch.h"
 #include "OrthographicCameraController.h"
 
-#include "Cyprium/KeyCodes.h"
-#include "Cyprium/Input.h"
+#include "Cyprium/Core/KeyCodes.h"
+#include "Cyprium/Core/Input.h"
 
 namespace Cyprium
 {

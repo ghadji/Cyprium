@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Cyprium/Core.h"
+#include "Cyprium/Core/Core.h"
 
 #include "Cyprium/Events/Event.h"
 #include "Cyprium/Events/ApplicationEvent.h"
-#include "Cyprium/Window.h"
-#include "Cyprium/LayerStack.h"
+#include "Cyprium/Core/Window.h"
+#include "Cyprium/Core/LayerStack.h"
 
 #include "Cyprium/Core/Timestep.h"
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "Cyprium/Core.h"
+#include "Cyprium/Core/Core.h"
 
 namespace Cyprium
 {

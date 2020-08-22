@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Cyprium/Input.h"
+#include "Cyprium/Core/Input.h"
 
 namespace Cyprium
 {

@@ -2,19 +2,19 @@
 
 // For use by Cyprium applications
 
-#include "Cyprium/Application.h"
+#include "Cyprium/Core/Application.h"
 
 #include "Cyprium/Core/Timestep.h"
 
-#include "Cyprium/Input.h"
-#include "Cyprium/KeyCodes.h"
-#include "Cyprium/MouseButtonCodes.h"
+#include "Cyprium/Core/Input.h"
+#include "Cyprium/Core/KeyCodes.h"
+#include "Cyprium/Core/MouseButtonCodes.h"
 
-#include "Cyprium/Layer.h"
-#include "Cyprium/Log.h"
+#include "Cyprium/Core/Layer.h"
+#include "Cyprium/Core/Log.h"
 
 #include "Cyprium/ImGui/ImGuiLayer.h"
-#include "Cyprium/OrthographicCameraController.h"
+#include "Cyprium/Renderer/OrthographicCameraController.h"
 
 /* Renderer */
 
@@ -32,6 +32,6 @@
 
 /* Entry Point */
 
-#include "Cyprium/EntryPoint.h"
+#include "Cyprium/Core/EntryPoint.h"
 
 /***************/

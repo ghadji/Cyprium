@@ -14,7 +14,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Cyprium/Log.h"
+#include "Cyprium/Core/Log.h"
 
 #ifdef CP_PLATFORM_WINDOWS
 	#include <Windows.h>

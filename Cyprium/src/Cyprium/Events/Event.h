@@ -2,7 +2,7 @@
 
 #include "cppch.h"
 
-#include "Cyprium/Core.h"
+#include "Cyprium/Core/Core.h"
 
 namespace Cyprium
 {

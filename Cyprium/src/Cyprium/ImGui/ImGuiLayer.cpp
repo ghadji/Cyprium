@@ -7,7 +7,7 @@
 #include "examples/imgui_impl_glfw.h"
 #include "examples/imgui_impl_opengl3.h"
 
-#include "Cyprium/Application.h"
+#include "Cyprium/Core/Application.h"
 
 // Temporary includes that will be removed later on
 #include <glad/glad.h>

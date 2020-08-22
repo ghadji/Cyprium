@@ -140,33 +140,33 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Cyprium\OrthographicCameraController.h" />
     <ClInclude Include="src\Cyprium.h" />
-    <ClInclude Include="src\Cyprium\Application.h" />
-    <ClInclude Include="src\Cyprium\Core.h" />
+    <ClInclude Include="src\Cyprium\Core\Application.h" />
+    <ClInclude Include="src\Cyprium\Core\Core.h" />
+    <ClInclude Include="src\Cyprium\Core\EntryPoint.h" />
+    <ClInclude Include="src\Cyprium\Core\Input.h" />
+    <ClInclude Include="src\Cyprium\Core\KeyCodes.h" />
+    <ClInclude Include="src\Cyprium\Core\Layer.h" />
+    <ClInclude Include="src\Cyprium\Core\LayerStack.h" />
+    <ClInclude Include="src\Cyprium\Core\Log.h" />
+    <ClInclude Include="src\Cyprium\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\Cyprium\Core\Timestep.h" />
-    <ClInclude Include="src\Cyprium\EntryPoint.h" />
+    <ClInclude Include="src\Cyprium\Core\Window.h" />
     <ClInclude Include="src\Cyprium\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Cyprium\Events\Event.h" />
     <ClInclude Include="src\Cyprium\Events\KeyEvent.h" />
     <ClInclude Include="src\Cyprium\Events\MouseEvent.h" />
     <ClInclude Include="src\Cyprium\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Cyprium\Input.h" />
-    <ClInclude Include="src\Cyprium\KeyCodes.h" />
-    <ClInclude Include="src\Cyprium\Layer.h" />
-    <ClInclude Include="src\Cyprium\LayerStack.h" />
-    <ClInclude Include="src\Cyprium\Log.h" />
-    <ClInclude Include="src\Cyprium\MouseButtonCodes.h" />
     <ClInclude Include="src\Cyprium\Renderer\Buffer.h" />
-    <ClInclude Include="src\Cyprium\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\Cyprium\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Cyprium\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\Cyprium\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\Cyprium\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Cyprium\Renderer\Renderer.h" />
     <ClInclude Include="src\Cyprium\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Cyprium\Renderer\Shader.h" />
     <ClInclude Include="src\Cyprium\Renderer\Texture.h" />
     <ClInclude Include="src\Cyprium\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Cyprium\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -587,21 +587,21 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Cyprium\Application.cpp" />
+    <ClCompile Include="src\Cyprium\Core\Application.cpp" />
+    <ClCompile Include="src\Cyprium\Core\Layer.cpp" />
+    <ClCompile Include="src\Cyprium\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Cyprium\Core\Log.cpp" />
     <ClCompile Include="src\Cyprium\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Cyprium\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Cyprium\Layer.cpp" />
-    <ClCompile Include="src\Cyprium\LayerStack.cpp" />
-    <ClCompile Include="src\Cyprium\Log.cpp" />
     <ClCompile Include="src\Cyprium\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Cyprium\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\Cyprium\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Cyprium\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Cyprium\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Cyprium\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\Cyprium\Renderer\Shader.cpp" />
     <ClCompile Include="src\Cyprium\Renderer\Texture.cpp" />
     <ClCompile Include="src\Cyprium\Renderer\VertexArray.cpp" />
-    <ClCompile Include="src\Cyprium\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />

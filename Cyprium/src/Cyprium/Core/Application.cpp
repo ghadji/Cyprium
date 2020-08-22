@@ -1,10 +1,10 @@
 #include "cppch.h"
-#include "Cyprium/Application.h"
+#include "Cyprium/Core/Application.h"
 
 #include "Input.h"
 
 #include "Cyprium/Renderer/Renderer.h"
-#include <Cyprium\KeyCodes.h>
+#include "Cyprium/Core/KeyCodes.h"
 #include <GLFW\glfw3.h>
 
 

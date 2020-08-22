@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Cyprium/Core.h"
+#include "Cyprium/Core/Core.h"
 
 #include "Cyprium/Renderer/VertexArray.h"
 

@@ -2,7 +2,7 @@
 #include "WindowsInput.h"
 
 #include <GLFW/glfw3.h>
-#include "Cyprium/Application.h"
+#include "Cyprium/Core/Application.h"
 
 namespace Cyprium
 {
