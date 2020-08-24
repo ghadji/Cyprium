@@ -77,7 +77,6 @@ project "Cyprium"
 
 		defines
 		{
-			"CP_PLATFORM_WINDOWS",
 			"CP_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
@@ -128,11 +127,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		systemversion "latest"
-
-		defines
-		{
-			"CP_PLATFORM_WINDOWS"
-		}
 
 	filter "configurations:Debug"
 		defines "CP_DEBUG"

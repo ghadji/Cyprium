@@ -1,12 +1,16 @@
 [submodule "Cyprium/vendor/spdlog"]
 	path = Cyprium/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+	branch = v1.x
 [submodule "Cyprium/vendor/GLFW"]
 	path = Cyprium/vendor/GLFW
 	url = https://github.com/ghadji/glfw/
+	branch = master
 [submodule "Cyprium/vendor/imgui"]
 	path = Cyprium/vendor/imgui
 	url = https://github.com/ghadji/imgui/
+	branch = docking
 [submodule "Cyprium\\vendor\\glm"]
 	path = Cyprium\\vendor\\glm
 	url = https://github.com/g-truc/glm
+	branch = master

@@ -29,9 +29,3 @@
 #include "Cyprium/Renderer/VertexArray.h"
 
 /***************/
-
-/* Entry Point */
-
-#include "Cyprium/Core/EntryPoint.h"
-
-/***************/
